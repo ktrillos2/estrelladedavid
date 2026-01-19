@@ -104,23 +104,7 @@ export function ClientsSection() {
           </Carousel>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Link href="/clientes">
-            <Button
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 group transition-all duration-300 transform hover:scale-105"
-            >
-              Ver todos nuestros clientes
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </Link>
-        </motion.div>
+
       </div>
     </section>
   )

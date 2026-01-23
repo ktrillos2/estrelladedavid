@@ -10,7 +10,7 @@ const socialLinks = [
   { icon: FaFacebookF, href: "#", label: "Facebook" },
   { icon: FaInstagram, href: "#", label: "Instagram" },
   { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
-  { icon: FaWhatsapp, href: "https://wa.me/51959741741", label: "WhatsApp" },
+  { icon: FaWhatsapp, href: "https://wa.me/51993756271", label: "WhatsApp" },
 ]
 
 const quickLinks = [
@@ -31,11 +31,11 @@ export function Footer() {
     <footer className="bg-secondary text-secondary-foreground relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-      
+
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo and Description */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -52,7 +52,7 @@ export function Footer() {
             <p className="text-sm text-secondary-foreground/70 leading-relaxed mb-6">
               Empresa dedicada al transporte de personal y alquiler de vehículos en Arequipa desde 2007. Compromiso, puntualidad y seguridad.
             </p>
-            
+
             {/* Social Links */}
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -85,15 +85,15 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
-                <motion.li 
+                <motion.li
                   key={link.href}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className="text-sm text-secondary-foreground/70 hover:text-primary hover:translate-x-1 transition-all inline-block"
                   >
                     {link.label}
@@ -116,15 +116,15 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {serviceLinks.map((link, index) => (
-                <motion.li 
+                <motion.li
                   key={link.href}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     className="text-sm text-secondary-foreground/70 hover:text-primary hover:translate-x-1 transition-all inline-block"
                   >
                     {link.label}
@@ -146,7 +146,7 @@ export function Footer() {
               <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-primary" />
             </h3>
             <ul className="space-y-4">
-              <motion.li 
+              <motion.li
                 whileHover={{ x: 3 }}
                 className="flex items-start gap-4 group"
               >
@@ -154,10 +154,10 @@ export function Footer() {
                   <HiOutlineLocationMarker className="h-5 w-5" />
                 </div>
                 <span className="text-sm text-secondary-foreground/70 leading-relaxed">
-                  Calle General Valera 377 la Tomilla, Cayma - Arequipa
+                  Calle General Varela 377 Tomilla - Cayma
                 </span>
               </motion.li>
-              <motion.li 
+              <motion.li
                 whileHover={{ x: 3 }}
                 className="flex items-center gap-4 group"
               >
@@ -168,20 +168,20 @@ export function Footer() {
                   <a href="tel:+51993756271" className="hover:text-primary transition-colors block">
                     +51 993 756 271
                   </a>
-                  <a href="tel:054619823" className="hover:text-primary transition-colors block">
-                    054 461-9823
+                  <a href="tel:+51959683159" className="hover:text-primary transition-colors block">
+                    +51 959 683 159
                   </a>
                 </div>
               </motion.li>
-              <motion.li 
+              <motion.li
                 whileHover={{ x: 3 }}
                 className="flex items-center gap-4 group"
               >
                 <div className="w-10 h-10 bg-white/10 group-hover:bg-primary rounded-lg flex items-center justify-center shrink-0 transition-colors">
                   <HiOutlineMail className="h-5 w-5" />
                 </div>
-                <a href="mailto:amendoza@estrelladedavid.pe" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">
-                  amendoza@estrelladedavid.pe
+                <a href="mailto:estrella_de_david1@hotmail.com" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">
+                  estrella_de_david1@hotmail.com
                 </a>
               </motion.li>
             </ul>
@@ -189,7 +189,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5 }}

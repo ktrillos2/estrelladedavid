@@ -12,26 +12,33 @@ const sarabun = Sarabun({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://estrelladedavid.pe'),
   title: 'Estrella de David S.R.L. | Transporte de Personal y Alquiler de Vehículos en Arequipa',
   description: 'Empresa dedicada al transporte de personal y alquiler de vehículos en Arequipa desde 2007. Servicios de transporte para empresas, eventos y convenciones.',
   generator: 'v0.app',
   keywords: ['transporte de personal', 'alquiler de vehículos', 'Arequipa', 'transporte turístico', 'eventos', 'convenciones'],
   icons: {
-    icon: [
+    icon: '/images/logo.png',
+    shortcut: '/images/logo.png',
+    apple: '/images/logo.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/images/logo.png',
+    },
+  },
+  openGraph: {
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/images/logo.png',
+        width: 800,
+        height: 600,
+        alt: 'Estrella de David Logo',
       },
     ],
-    apple: '/apple-icon.png',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/images/logo.png'],
   },
 }
 

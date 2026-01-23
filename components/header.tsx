@@ -39,13 +39,13 @@ export function Header() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-6">
-              <a href="tel:+51054959741" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <a href="tel:+51993756271" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <HiOutlinePhone className="h-4 w-4" />
-                <span>(054) 959741</span>
+                <span>+51 993 756 271</span>
               </a>
-              <a href="mailto:contacto@estrelladedavid.pe" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <a href="mailto:estrella_de_david1@hotmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <HiOutlineMail className="h-4 w-4" />
-                <span>contacto@estrelladedavid.pe</span>
+                <span>estrella_de_david1@hotmail.com</span>
               </a>
             </div>
             <a
@@ -55,7 +55,7 @@ export function Header() {
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
               <FaWhatsapp className="h-4 w-4" />
-              <span>WhatsApp: +51 959 741 741</span>
+              <span>WhatsApp: +51 993 756 271</span>
             </a>
           </div>
         </div>

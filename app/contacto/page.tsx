@@ -12,21 +12,21 @@ const contactInfo = [
   {
     icon: HiOutlineLocationMarker,
     title: "Dirección",
-    content: ["Calle General Valera 377 la Tomilla", "Cayma - Arequipa"],
+    content: ["Calle General Varela 377 Tomilla - Cayma"],
     color: "from-amber-500 to-yellow-400",
   },
   {
     icon: HiOutlinePhone,
     title: "Teléfonos",
-    content: ["+51 993 756 271", "054 461-9823"],
-    links: ["tel:+51993756271", "tel:054619823"],
+    content: ["+51 993 756 271", "+51 959 683 159"],
+    links: ["tel:+51993756271", "tel:+51959683159"],
     color: "from-orange-500 to-amber-400",
   },
   {
     icon: HiOutlineMail,
     title: "Correos Electrónicos",
-    content: ["amendoza@estrelladedavid.pe", "estrella_de_david1@hotmail.com"],
-    links: ["mailto:amendoza@estrelladedavid.pe", "mailto:estrella_de_david1@hotmail.com"],
+    content: ["estrella_de_david1@hotmail.com"],
+    links: ["mailto:estrella_de_david1@hotmail.com"],
     color: "from-yellow-500 to-amber-300",
   },
   {
@@ -50,7 +50,7 @@ export default function ContactoPage() {
               backgroundSize: '40px 40px'
             }} />
           </div>
-          
+
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -76,7 +76,7 @@ export default function ContactoPage() {
                 Hablemos
               </h1>
               <p className="text-xl text-secondary-foreground/80 leading-relaxed">
-                Estamos aquí para ayudarle. Contáctenos para solicitar información 
+                Estamos aquí para ayudarle. Contáctenos para solicitar información
                 sobre nuestros servicios o una cotización personalizada.
               </p>
             </motion.div>
@@ -86,7 +86,7 @@ export default function ContactoPage() {
         {/* Contact Section */}
         <section className="py-24 bg-background relative overflow-hidden">
           <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2" />
-          
+
           <div className="container mx-auto px-4 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
               {/* Contact Form */}
@@ -116,11 +116,11 @@ export default function ContactoPage() {
                 <h2 className="text-3xl font-bold text-foreground mb-8">
                   Datos de Contacto
                 </h2>
-                
+
                 <div className="space-y-6 mb-10">
                   {contactInfo.map((item, index) => (
-                    <motion.div 
-                      key={item.title} 
+                    <motion.div
+                      key={item.title}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
@@ -157,7 +157,7 @@ export default function ContactoPage() {
 
                 {/* WhatsApp CTA */}
                 <motion.a
-                  href="https://wa.me/51959741741?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20de%20transporte"
+                  href="https://wa.me/51993756271?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20de%20transporte"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
@@ -194,7 +194,7 @@ export default function ContactoPage() {
                 Visítenos en nuestra oficina principal en Cayma, Arequipa.
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -202,7 +202,7 @@ export default function ContactoPage() {
               className="rounded-2xl overflow-hidden shadow-2xl h-[500px] border border-border/50"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.5835476076395!2d-71.53916068513125!3d-16.38383848868196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a5c6b9d6f1f%3A0x4b0a5c1234567890!2sCalle%20General%20Valera%20377%2C%20Cayma%2C%20Arequipa!5e0!3m2!1ses!2spe!4v1234567890123!5m2!1ses!2spe"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.5835476076395!2d-71.53916068513125!3d-16.38383848868196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a5c6b9d6f1f%3A0x4b0a5c1234567890!2sCalle%20General%20Varela%20377%2C%20Cayma%2C%20Arequipa!5e0!3m2!1ses!2spe!4v1234567890123!5m2!1ses!2spe"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

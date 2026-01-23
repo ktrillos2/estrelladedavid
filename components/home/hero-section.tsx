@@ -18,28 +18,60 @@ import {
 
 const slides = [
   {
-    image: "/images/team-airport.jpg",
-    alt: "Equipo de Estrella de David frente a un bus en el aeropuerto de Arequipa",
+    image: "/images/2969e9a5-bf6a-41bf-bb9d-bb864cefe3d9.jpeg",
+    alt: "Flota de vehículos modernos de Estrella de David",
+    title: "Alquiler de Vehículos",
+    subtitle: "Soluciones flexibles para su movilidad",
+    description: "Disponga de nuestra moderna flota para sus necesidades personales o corporativas.",
+    features: ["Variedad de Modelos", "Tarifas Competitivas", "Soporte 24/7"]
+  },
+  {
+    image: "/images/6726b31f-e811-4f06-953e-c73326e277fc.jpeg",
+    alt: "Transporte corporativo profesional",
     title: "Transporte de Personal",
-    subtitle: "Profesionalismo y puntualidad garantizada",
-    description: "Más de 17 años brindando servicios de transporte corporativo de alta calidad.",
-    features: ["Conductores Certificados", "Atención 24/7", "Seguridad Total"]
+    subtitle: "Seguridad y puntualidad en cada viaje",
+    description: "Servicio especializado para el traslado de personal de empresas e instituciones.",
+    features: ["Conductores Calificados", "Monitoreo GPS", "Seguridad Total"]
   },
   {
-    image: "/images/vans-fleet.jpg",
-    alt: "Flota de vans Mercedes Sprinter de Estrella de David",
-    title: "Flota Moderna",
-    subtitle: "Vehículos equipados para su comodidad",
-    description: "Viaje con la máxima comodidad en nuestras modernas Mercedes Sprinter.",
-    features: ["Aire Acondicionado", "Asientos Reclinables", "GPS Monitoreado"]
+    image: "/images/d2e5b4ee-c4df-4a83-a8dd-79ba14138b64.jpeg",
+    alt: "Buses confortables para turismo y eventos",
+    title: "Turismo y Eventos",
+    subtitle: "Viaje con comodidad y estilo",
+    description: "Transporte ideal para excursiones, congresos y eventos sociales.",
+    features: ["Aire Acondicionado", "Asientos Reclinables", "Experiencia Garantizada"]
   },
   {
-    image: "/images/buses-colonial.jpg",
-    alt: "Buses de Estrella de David en la Plaza de Armas de Arequipa",
-    title: "Eventos y Convenciones",
-    subtitle: "El mejor servicio para sus eventos especiales",
-    description: "Logística integral de transporte para congresos, bodas y turismo.",
-    features: ["Capacidad Flexible", "Coordinación Logística", "Experiencia Local"]
+    image: "/images/d558da3c-69a4-4240-8d65-5d133d0f0985.jpeg",
+    alt: "Servicio de transporte privado de alta calidad",
+    title: "Servicio Ejecutivo",
+    subtitle: "Exclusividad y confort",
+    description: "Atención personalizada para traslados ejecutivos y VIP.",
+    features: ["Discreción", "Confort Premium", "Atención Personalizada"]
+  },
+  {
+    image: "/images/bus-gold-1.jpg",
+    alt: "Bus moderno con diseño dorado de Estrella de David",
+    title: "Confort Superior",
+    subtitle: "Viaje con estilo y elegancia",
+    description: "Nuestras unidades modernas garantizan una experiencia de viaje inigualable.",
+    features: ["Diseño Moderno", "Asientos Ergonómicos", "Climatización"]
+  },
+  {
+    image: "/images/bus-silver-1.jpg",
+    alt: "Bus interprovincial plateado y moderno",
+    title: "Viajes Seguros",
+    subtitle: "Su seguridad es nuestra prioridad",
+    description: "Flota equipada con la última tecnología en seguridad vial.",
+    features: ["Frenos ABS", "Control de Estabilidad", "Monitoreo 24/7"]
+  },
+  {
+    image: "/images/bus-silver-2.jpg",
+    alt: "Vista frontal de bus moderno de Estrella de David",
+    title: "Servicio Puntual",
+    subtitle: "Respetamos su tiempo",
+    description: "Garantizamos la puntualidad en todos nuestros servicios de transporte.",
+    features: ["Salidas Exactas", "Rutas Optimizadas", "Conductores Expertos"]
   },
 ]
 
@@ -63,7 +95,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative h-screen min-h-[700px] overflow-hidden bg-slate-900"
+      className="relative h-[calc(100vh-80px)] md:h-[calc(100vh-116px)] min-h-[600px] overflow-hidden bg-slate-950"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
@@ -85,8 +117,8 @@ export function HeroSection() {
             priority
           />
           {/* Enhanced Overlay - Darker gradient for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
         </motion.div>
       </AnimatePresence>
 
@@ -177,7 +209,7 @@ export function HeroSection() {
                       </span>
                     </Button>
                   </Link>
-                  <a href="https://wa.me/51959741741" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/51993756271" target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
                       variant="outline"

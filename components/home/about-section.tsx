@@ -76,7 +76,7 @@ export function AboutSection() {
             </p>
 
             <p className="text-gray-500 leading-relaxed mb-10">
-              Dedicados al transporte de personal y del sector público, nuestra filosofía
+              Dedicados al transporte de personal y alquiler de vehiculos, nuestra filosofía
               se centra en la <span className="font-bold text-gray-900">seguridad integral</span> y
               la <span className="font-bold text-gray-900">eficiencia operativa</span>.
             </p>

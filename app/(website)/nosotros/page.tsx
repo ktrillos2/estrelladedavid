@@ -49,7 +49,7 @@ const timeline = [
 function AnimatedCounter({ value, duration = 2 }: { value: string; duration?: number }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-  
+
   return (
     <span ref={ref}>
       {isInView ? value : "0"}
@@ -77,7 +77,7 @@ export default function NosotrosPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/85 to-secondary/70" />
           </div>
-          
+
           <div className="relative z-10 container mx-auto px-4 py-32">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -97,7 +97,7 @@ export default function NosotrosPage() {
                 Quiénes Somos
               </h1>
               <p className="text-xl text-white/80 leading-relaxed">
-                Somos una empresa dedicada al transporte de personal y del sector público, 
+                Somos una empresa dedicada al transporte de personal y del sector público,
                 con más de 17 años de experiencia brindando servicios de calidad en Arequipa.
               </p>
             </motion.div>
@@ -114,7 +114,7 @@ export default function NosotrosPage() {
         {/* Mission & Vision Section */}
         <section ref={missionRef} className="py-24 bg-background relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          
+
           <div className="container mx-auto px-4 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
               <motion.div
@@ -132,10 +132,10 @@ export default function NosotrosPage() {
                     Compromiso con la Calidad
                   </h2>
                   <p className="text-muted-foreground leading-relaxed text-lg">
-                    Estrella de David S.R.L. es una empresa dedicada al transporte de personal, 
-                    comprometida en brindar un servicio integral, con altos estándares de calidad, 
-                    seguridad y puntualidad. Buscamos satisfacer las necesidades de movilidad de 
-                    nuestros clientes, contribuyendo al desarrollo de las empresas y la comunidad 
+                    Estrella de David S.R.L. es una empresa dedicada al transporte de personal,
+                    comprometida en brindar un servicio integral, con altos estándares de calidad,
+                    seguridad y puntualidad. Buscamos satisfacer las necesidades de movilidad de
+                    nuestros clientes, contribuyendo al desarrollo de las empresas y la comunidad
                     arequipeña.
                   </p>
                 </div>
@@ -156,9 +156,9 @@ export default function NosotrosPage() {
                     Liderazgo Regional
                   </h2>
                   <p className="text-secondary-foreground/80 leading-relaxed text-lg">
-                    Aspiramos ser reconocidos como una empresa privada rentable, líder en el 
-                    transporte de personal en la región sur del Perú, destacándonos por la 
-                    excelencia en el servicio, la innovación constante y el compromiso con 
+                    Aspiramos ser reconocidos como una empresa privada rentable, líder en el
+                    transporte de personal en la región sur del Perú, destacándonos por la
+                    excelencia en el servicio, la innovación constante y el compromiso con
                     la seguridad y bienestar de nuestros pasajeros y colaboradores.
                   </p>
                 </div>
@@ -198,7 +198,7 @@ export default function NosotrosPage() {
                   whileHover={{ y: -10 }}
                   className="bg-background rounded-2xl p-8 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 group"
                 >
-                  <motion.div 
+                  <motion.div
                     whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                     transition={{ duration: 0.5 }}
                     className={`w-20 h-20 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg`}
@@ -246,9 +246,8 @@ export default function NosotrosPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className={`relative flex items-center gap-8 mb-12 ${
-                      index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                    }`}
+                    className={`relative flex items-center gap-8 mb-12 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                      }`}
                   >
                     <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
                       <motion.div
@@ -260,12 +259,12 @@ export default function NosotrosPage() {
                         <p className="text-muted-foreground">{item.description}</p>
                       </motion.div>
                     </div>
-                    
+
                     {/* Center dot */}
                     <div className="hidden md:flex w-4 h-4 bg-primary rounded-full shrink-0 relative z-10">
                       <span className="absolute inset-0 bg-primary rounded-full animate-ping opacity-30" />
                     </div>
-                    
+
                     <div className="flex-1 hidden md:block" />
                   </motion.div>
                 ))}
@@ -335,10 +334,10 @@ export default function NosotrosPage() {
                   Confía en los Expertos
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  Con más de 17 años de experiencia, hemos desarrollado procesos y estándares 
+                  Con más de 17 años de experiencia, hemos desarrollado procesos y estándares
                   que garantizan un servicio de primera calidad.
                 </p>
-                
+
                 <ul className="space-y-4">
                   {[
                     "Conductores profesionales y certificados",
@@ -393,7 +392,6 @@ export default function NosotrosPage() {
           </div>
         </section>
       </main>
-      <Footer />
       <WhatsAppButton />
     </>
   )

@@ -40,7 +40,6 @@ const contactInfo = [
 export default function ContactoPage() {
   return (
     <>
-      <Header />
       <main>
         {/* Hero Section */}
         <section className="relative py-32 bg-secondary text-secondary-foreground overflow-hidden">

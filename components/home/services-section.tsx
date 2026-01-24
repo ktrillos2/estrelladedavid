@@ -48,14 +48,14 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 opacity-0"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-[#FFD700]/10 text-[#FFD600] rounded-full text-sm font-medium mb-4"
+            className="inline-block px-4 py-2 bg-[#FFD700]/10 text-[#FFD600] rounded-full text-sm font-medium mb-4 opacity-0"
           >
             Nuestros Servicios
           </motion.span>
@@ -76,7 +76,7 @@ export function ServicesSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="group relative bg-white dark:bg-card rounded-[2rem] p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50"
+              className="group relative bg-white dark:bg-card rounded-[2rem] p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-border/50 opacity-0"
             >
               {/* Icon */}
               <div className={`w-16 h-16 bg-[#FFD700] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-transform duration-300`}>
@@ -100,7 +100,7 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-16 opacity-0"
         >
           <Link href="/contacto">
             <Button size="lg" className="bg-slate-900 text-white hover:bg-slate-800 text-lg px-8 py-6 rounded-xl shadow-lg">

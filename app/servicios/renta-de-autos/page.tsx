@@ -39,7 +39,7 @@ const features = [
 const vehicleTypes = [
   { type: "Sedanes", description: "Vehículos compactos y económicos para uso urbano", capacity: "4-5 pasajeros", color: "from-amber-500 to-yellow-400" },
   { type: "SUVs", description: "Vehículos todo terreno para mayor versatilidad", capacity: "5-7 pasajeros", color: "from-orange-500 to-amber-400" },
-  { type: "Vans", description: "Ideales para grupos pequeños y familias", capacity: "12-15 pasajeros", color: "from-yellow-500 to-amber-300" },
+  { type: "Buses", description: "Para grupos pequeños y grandes", capacity: "12-50 pasajeros", color: "from-yellow-500 to-amber-300" },
   { type: "Camionetas", description: "Para transporte de carga y personal", capacity: "3-5 pasajeros", color: "from-green-500 to-emerald-400" },
 ]
 
@@ -95,8 +95,8 @@ export default function RentaDeAutosPage() {
                 Renta de Autos y Camionetas
               </h1>
               <p className="text-xl text-white/80 leading-relaxed mb-8 max-w-2xl">
-                En Estrella de David le asesoramos hasta conseguir el automóvil que se 
-                adapte a sus necesidades. Ofrecemos una amplia gama de vehículos modernos 
+                En Estrella de David le asesoramos hasta conseguir el automóvil que se
+                adapte a sus necesidades. Ofrecemos una amplia gama de vehículos modernos
                 con las mejores tarifas del mercado.
               </p>
               <motion.div
@@ -183,8 +183,8 @@ export default function RentaDeAutosPage() {
                   Vehículos Modernos y Seguros
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
-                  Contamos con una amplia variedad de vehículos para satisfacer cualquier 
-                  necesidad de transporte. Desde sedanes económicos para uso personal 
+                  Contamos con una amplia variedad de vehículos para satisfacer cualquier
+                  necesidad de transporte. Desde sedanes económicos para uso personal
                   hasta vans para grupos grandes.
                 </p>
                 <ul className="space-y-4">

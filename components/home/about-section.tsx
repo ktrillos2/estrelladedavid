@@ -22,14 +22,14 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative p-6 md:p-8"
+            className="relative p-6 md:p-8 opacity-0"
           >
             {/* Yellow Background / Frame */}
             <div className="absolute inset-0 bg-[#FFD700] rounded-[2rem] transform -rotate-2" />
 
             <div className="relative aspect-[4/5] md:aspect-square rounded-2xl overflow-hidden shadow-2xl transform rotate-2 transition-transform hover:rotate-0 duration-500">
               <Image
-                src="/images/team-airport.jpg"
+                src="/images/d558da3c-69a4-4240-8d65-5d133d0f0985.jpeg"
                 alt="Equipo de Estrella de David"
                 fill
                 className="object-cover"
@@ -51,7 +51,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="relative pt-12 lg:pt-0"
+            className="relative pt-12 lg:pt-0 opacity-0"
           >
             {/* Faint Background Text */}
             <span className="absolute -top-20 left-0 text-[120px] md:text-[180px] font-black text-gray-100 select-none -z-10 leading-none opacity-60">
@@ -90,7 +90,7 @@ export function AboutSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 + index * 0.1 }}
                   whileHover={{ x: 5 }}
-                  className="flex items-center gap-4 group cursor-default"
+                  className="flex items-center gap-4 group cursor-default opacity-0"
                 >
                   <div className="p-1 rounded-full border-2 border-[#FFD700] text-[#FFD700] group-hover:bg-[#FFD700] group-hover:text-white transition-colors duration-300">
                     <CheckCircle2 className="w-4 h-4" strokeWidth={3} />

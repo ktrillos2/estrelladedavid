@@ -35,8 +35,8 @@ const slides = [
   },
   {
     image: "/images/d2e5b4ee-c4df-4a83-a8dd-79ba14138b64.jpeg",
-    alt: "Buses confortables para turismo y eventos",
-    title: "Turismo y Eventos",
+    alt: "Buses confortables para eventos y convenciones",
+    title: "Eventos y Convenciones",
     subtitle: "Viaje con comodidad y estilo",
     description: "Transporte ideal para excursiones, congresos y eventos sociales.",
     features: ["Aire Acondicionado", "Asientos Reclinables", "Experiencia Garantizada"]
@@ -161,9 +161,7 @@ export function HeroSection() {
                   transition={{ delay: 0.3 }}
                   className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-[1.1] tracking-tight"
                 >
-                  {slides[currentSlide].title.split(" ").map((word, i) => (
-                    <span key={i} className="block">{word}</span>
-                  ))}
+                  {slides[currentSlide].title}
                 </motion.h1>
 
                 <motion.p

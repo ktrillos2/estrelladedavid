@@ -46,14 +46,14 @@ export function ClientsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 opacity-0"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-white/10 text-primary rounded-full text-sm font-medium mb-4"
+            className="inline-block px-4 py-2 bg-white/10 text-primary rounded-full text-sm font-medium mb-4 opacity-0"
           >
             Clientes Destacados
           </motion.span>

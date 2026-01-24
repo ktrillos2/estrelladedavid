@@ -55,7 +55,6 @@ const benefits = [
 export default function RentaDeAutosPage() {
   return (
     <>
-      <Header />
       <main>
         {/* Hero Section */}
         <section className="relative min-h-[70vh] flex items-center overflow-hidden">
@@ -317,8 +316,7 @@ export default function RentaDeAutosPage() {
           </div>
         </section>
       </main>
-      <Footer />
-      <WhatsAppButton />
+    </main >
     </>
   )
 }

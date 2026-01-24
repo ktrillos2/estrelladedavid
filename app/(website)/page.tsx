@@ -10,7 +10,6 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 export default function HomePage() {
   return (
     <>
-      <Header />
       <main>
         <HeroSection />
         <AboutSection />
@@ -18,8 +17,6 @@ export default function HomePage() {
         <ServicesSection />
         <ClientsSection />
       </main>
-      <Footer />
-      <WhatsAppButton />
     </>
   )
 }

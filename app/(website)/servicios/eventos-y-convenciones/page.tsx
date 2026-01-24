@@ -45,7 +45,6 @@ const fleetStats = [
 export default function EventosYConvencionesPage() {
   return (
     <>
-      <Header />
       <main>
         {/* Hero Section */}
         <section className="relative min-h-[70vh] flex items-center overflow-hidden">
@@ -85,8 +84,8 @@ export default function EventosYConvencionesPage() {
                 Eventos y Convenciones
               </h1>
               <p className="text-xl text-white/80 leading-relaxed mb-8 max-w-2xl">
-                En Estrella de David ofrecemos el servicio de transporte privado para todo 
-                tipo de eventos y convenciones, desde excursiones escolares hasta congresos 
+                En Estrella de David ofrecemos el servicio de transporte privado para todo
+                tipo de eventos y convenciones, desde excursiones escolares hasta congresos
                 empresariales, con la garantía de seguridad y puntualidad.
               </p>
               <motion.div
@@ -199,15 +198,15 @@ export default function EventosYConvencionesPage() {
                   Eventos de Gran Escala
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
-                  Nuestra experiencia nos permite manejar eventos de cualquier magnitud, 
+                  Nuestra experiencia nos permite manejar eventos de cualquier magnitud,
                   desde pequeños grupos hasta grandes convenciones con cientos de participantes.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
-                  Coordinamos rutas y horarios para garantizar que todos los asistentes 
+                  Coordinamos rutas y horarios para garantizar que todos los asistentes
                   lleguen puntualmente a su destino, sin importar la complejidad del evento.
                 </p>
                 <p className="text-muted-foreground leading-relaxed text-lg">
-                  Contamos con vehículos de diferentes capacidades para adaptarnos a las 
+                  Contamos con vehículos de diferentes capacidades para adaptarnos a las
                   necesidades específicas de cada evento.
                 </p>
               </motion.div>
@@ -297,8 +296,6 @@ export default function EventosYConvencionesPage() {
           </div>
         </section>
       </main>
-      <Footer />
-      <WhatsAppButton />
     </>
   )
 }

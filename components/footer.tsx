@@ -26,7 +26,9 @@ const serviceLinks = [
   { href: "/servicios/renta-de-autos", label: "Renta de Autos" },
 ]
 
-export function Footer() {
+export function Footer({ data }: { data: any }) {
+  const { logo, description, socialLinks, contactInfo } = data || {}
+
   return (
     <footer className="bg-secondary text-secondary-foreground relative overflow-hidden">
       {/* Background decoration */}
@@ -42,33 +44,45 @@ export function Footer() {
             viewport={{ once: true }}
             className="lg:col-span-1"
           >
-            <Image
-              src="/images/logo.png"
-              alt="Estrella de David - Servicios de Transportes Turísticos"
-              width={160}
-              height={53}
-              className="h-14 w-auto mb-6 brightness-0 invert"
-            />
+            {logo?.asset?.url ? (
+              <Image
+                src={logo.asset.url}
+                alt="Estrella de David"
+                width={160}
+                height={53}
+                className="h-14 w-auto mb-6 brightness-0 invert"
+              />
+            ) : (
+              <span className="text-xl font-bold mb-6 block">Estrella de David</span>
+            )}
+
             <p className="text-sm text-secondary-foreground/70 leading-relaxed mb-6">
-              Empresa dedicada al transporte de personal y alquiler de vehículos en Arequipa desde 2007. Compromiso, puntualidad y seguridad.
+              {description}
             </p>
 
             {/* Social Links */}
             <div className="flex gap-3">
-              {socialLinks.map((social) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 bg-white/10 hover:bg-primary rounded-lg flex items-center justify-center transition-colors"
-                  aria-label={social.label}
-                >
-                  <social.icon className="h-4 w-4" />
-                </motion.a>
-              ))}
+              {socialLinks?.map((social: any) => {
+                let Icon = FaFacebookF;
+                if (social.platform === 'instagram') Icon = FaInstagram;
+                if (social.platform === 'linkedin') Icon = FaLinkedinIn;
+                if (social.platform === 'whatsapp') Icon = FaWhatsapp;
+
+                return (
+                  <motion.a
+                    key={social.platform}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1, y: -3 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-10 h-10 bg-white/10 hover:bg-primary rounded-lg flex items-center justify-center transition-colors"
+                    aria-label={social.platform}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </motion.a>
+                )
+              })}
             </div>
           </motion.div>
 
@@ -84,7 +98,12 @@ export function Footer() {
               <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-primary" />
             </h3>
             <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
+              {[
+                { href: "/", label: "Inicio" },
+                { href: "/nosotros", label: "Nosotros" },
+                { href: "/clientes", label: "Clientes" },
+                { href: "/contacto", label: "Contacto" },
+              ].map((link, index) => (
                 <motion.li
                   key={link.href}
                   initial={{ opacity: 0, x: -10 }}
@@ -115,7 +134,11 @@ export function Footer() {
               <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-primary" />
             </h3>
             <ul className="space-y-3">
-              {serviceLinks.map((link, index) => (
+              {[
+                { href: "/servicios/transporte-de-personal", label: "Transporte de Personal" },
+                { href: "/servicios/eventos-y-convenciones", label: "Eventos y Convenciones" },
+                { href: "/servicios/renta-de-autos", label: "Renta de Autos" },
+              ].map((link, index) => (
                 <motion.li
                   key={link.href}
                   initial={{ opacity: 0, x: -10 }}
@@ -154,7 +177,7 @@ export function Footer() {
                   <HiOutlineLocationMarker className="h-5 w-5" />
                 </div>
                 <span className="text-sm text-secondary-foreground/70 leading-relaxed">
-                  Calle General Varela 377 Tomilla - Cayma
+                  {contactInfo?.address}
                 </span>
               </motion.li>
               <motion.li
@@ -165,12 +188,11 @@ export function Footer() {
                   <HiOutlinePhone className="h-5 w-5" />
                 </div>
                 <div className="text-sm text-secondary-foreground/70">
-                  <a href="tel:+51993756271" className="hover:text-primary transition-colors block">
-                    +51 993 756 271
-                  </a>
-                  <a href="tel:+51959683159" className="hover:text-primary transition-colors block">
-                    +51 959 683 159
-                  </a>
+                  {contactInfo?.phones?.map((phone: string) => (
+                    <a key={phone} href={`tel:${phone.replace(/\s/g, '')}`} className="hover:text-primary transition-colors block">
+                      {phone}
+                    </a>
+                  ))}
                 </div>
               </motion.li>
               <motion.li
@@ -180,9 +202,11 @@ export function Footer() {
                 <div className="w-10 h-10 bg-white/10 group-hover:bg-primary rounded-lg flex items-center justify-center shrink-0 transition-colors">
                   <HiOutlineMail className="h-5 w-5" />
                 </div>
-                <a href="mailto:estrella_de_david1@hotmail.com" className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">
-                  estrella_de_david1@hotmail.com
-                </a>
+                {contactInfo?.email && (
+                  <a href={`mailto:${contactInfo.email}`} className="text-sm text-secondary-foreground/70 hover:text-primary transition-colors">
+                    {contactInfo.email}
+                  </a>
+                )}
               </motion.li>
             </ul>
           </motion.div>

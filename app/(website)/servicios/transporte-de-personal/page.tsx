@@ -49,7 +49,6 @@ const features = [
 export default function TransporteDePersonalPage() {
   return (
     <>
-      <Header />
       <main>
         {/* Hero Section */}
         <section className="relative min-h-[70vh] flex items-center overflow-hidden">
@@ -89,8 +88,8 @@ export default function TransporteDePersonalPage() {
                 Transporte de Personal
               </h1>
               <p className="text-xl text-white/80 leading-relaxed mb-8 max-w-2xl">
-                Con más de 17 años de experiencia profesional, brindamos servicios de transporte 
-                de personal para diferentes empresas, garantizando seguridad, comodidad y 
+                Con más de 17 años de experiencia profesional, brindamos servicios de transporte
+                de personal para diferentes empresas, garantizando seguridad, comodidad y
                 puntualidad en cada traslado.
               </p>
               <motion.div
@@ -128,15 +127,15 @@ export default function TransporteDePersonalPage() {
                   ¿Qué es el transporte de personal?
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
-                  El transporte de personal es un servicio especializado que permite a las empresas 
-                  movilizar a sus colaboradores desde sus hogares hasta el centro de trabajo y 
-                  viceversa. Este servicio no solo optimiza los tiempos de traslado, sino que 
-                  también contribuye a mejorar la calidad de vida de los empleados y la 
+                  El transporte de personal es un servicio especializado que permite a las empresas
+                  movilizar a sus colaboradores desde sus hogares hasta el centro de trabajo y
+                  viceversa. Este servicio no solo optimiza los tiempos de traslado, sino que
+                  también contribuye a mejorar la calidad de vida de los empleados y la
                   productividad de la organización.
                 </p>
                 <p className="text-muted-foreground leading-relaxed text-lg">
-                  En Estrella de David S.R.L., contamos con una flota moderna y conductores 
-                  capacitados para ofrecer un servicio integral que se adapta a las necesidades 
+                  En Estrella de David S.R.L., contamos con una flota moderna y conductores
+                  capacitados para ofrecer un servicio integral que se adapta a las necesidades
                   específicas de cada empresa.
                 </p>
               </motion.div>
@@ -238,7 +237,7 @@ export default function TransporteDePersonalPage() {
                   />
                 </div>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -280,7 +279,7 @@ export default function TransporteDePersonalPage() {
               backgroundSize: '40px 40px'
             }} />
           </div>
-          
+
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -306,8 +305,6 @@ export default function TransporteDePersonalPage() {
           </div>
         </section>
       </main>
-      <Footer />
-      <WhatsAppButton />
     </>
   )
 }

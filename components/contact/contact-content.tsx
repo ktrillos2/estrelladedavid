@@ -40,11 +40,12 @@ interface ContactContentProps {
         description: string
         formTitle: string
         infoTitle: string
+        mapUrl: string
     }
 }
 
 export function ContactContent({ data }: ContactContentProps) {
-    const { title, description, formTitle, infoTitle } = data || {}
+    const { title, description, formTitle, infoTitle, mapUrl } = data || {}
 
     return (
         <>
@@ -207,7 +208,7 @@ export function ContactContent({ data }: ContactContentProps) {
                         className="rounded-2xl overflow-hidden shadow-2xl h-[500px] border border-border/50"
                     >
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.5835476076395!2d-71.53916068513125!3d-16.38383848868196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a5c6b9d6f1f%3A0x4b0a5c1234567890!2sCalle%20General%20Varela%20377%2C%20Cayma%2C%20Arequipa!5e0!3m2!1ses!2spe!4v1234567890123!5m2!1ses!2spe"
+                            src={mapUrl || "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.5835476076395!2d-71.53916068513125!3d-16.38383848868196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a5c6b9d6f1f%3A0x4b0a5c1234567890!2sCalle%20General%20Varela%20377%2C%20Cayma%2C%20Arequipa!5e0!3m2!1ses!2spe!4v1234567890123!5m2!1ses!2spe"}
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}

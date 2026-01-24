@@ -108,7 +108,10 @@ export function Header({ data }: { data: any }) {
                 if (item.subItems && item.subItems.length > 0) {
                   return (
                     <DropdownMenu key={index}>
-                      <DropdownMenuTrigger className="flex items-center gap-1 text-[15px] font-medium text-foreground hover:text-[#FFD700] transition-colors group tracking-wide outline-none py-1 relative">
+                      <DropdownMenuTrigger
+                        id={`dropdown-trigger-${index}`}
+                        className="flex items-center gap-1 text-[15px] font-medium text-foreground hover:text-[#FFD700] transition-colors group tracking-wide outline-none py-1 relative"
+                      >
                         {item.label}
                         <HiChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
                         <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#FFD700] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />

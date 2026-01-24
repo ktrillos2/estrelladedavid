@@ -7,15 +7,24 @@ import { ServicesSection } from "@/components/home/services-section"
 import { ClientsSection } from "@/components/home/clients-section"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 
-export default function HomePage() {
+import { sanityFetch } from "@/sanity/lib/fetch"
+import { HERO_QUERY, ABOUT_QUERY, VALUES_QUERY, SERVICES_QUERY, CLIENTS_QUERY } from "@/sanity/lib/queries"
+
+export default async function HomePage() {
+  const heroData = await sanityFetch({ query: HERO_QUERY }) as { slides: any[] }
+  const aboutData = await sanityFetch({ query: ABOUT_QUERY }) as any
+  const valuesData = await sanityFetch({ query: VALUES_QUERY }) as any
+  const servicesData = await sanityFetch({ query: SERVICES_QUERY }) as any
+  const clientsData = await sanityFetch({ query: CLIENTS_QUERY }) as any
+
   return (
     <>
       <main>
-        <HeroSection />
-        <AboutSection />
-        <ValuesSection />
-        <ServicesSection />
-        <ClientsSection />
+        <HeroSection data={heroData} />
+        <AboutSection data={aboutData} />
+        <ValuesSection data={valuesData} />
+        <ServicesSection data={servicesData} />
+        <ClientsSection data={clientsData} />
       </main>
     </>
   )

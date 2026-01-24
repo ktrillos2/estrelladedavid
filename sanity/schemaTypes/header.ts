@@ -49,5 +49,12 @@ export const header = defineType({
                 }
             ]
         })
-    ]
+    ],
+    preview: {
+        prepare() {
+            return {
+                title: 'Configuración de Encabezado'
+            }
+        }
+    }
 })

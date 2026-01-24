@@ -47,5 +47,12 @@ export const footer = defineType({
                 defineField({ name: 'email', title: 'Email', type: 'string' }),
             ]
         })
-    ]
+    ],
+    preview: {
+        prepare() {
+            return {
+                title: 'Configuración de Pie de Página'
+            }
+        }
+    }
 })

@@ -16,82 +16,45 @@ import {
   Award
 } from "lucide-react"
 
-const slides = [
-  {
-    image: "/images/2969e9a5-bf6a-41bf-bb9d-bb864cefe3d9.jpeg",
-    alt: "Flota de vehículos modernos de Estrella de David",
-    title: "Alquiler de Vehículos",
-    subtitle: "Soluciones flexibles para su movilidad",
-    description: "Disponga de nuestra moderna flota para sus necesidades personales o corporativas.",
-    features: ["Variedad de Modelos", "Tarifas Competitivas", "Soporte 24/7"]
-  },
-  {
-    image: "/images/6726b31f-e811-4f06-953e-c73326e277fc.jpeg",
-    alt: "Transporte corporativo profesional",
-    title: "Transporte de Personal",
-    subtitle: "Seguridad y puntualidad en cada viaje",
-    description: "Servicio especializado para el traslado de personal de empresas e instituciones.",
-    features: ["Conductores Calificados", "Monitoreo GPS", "Seguridad Total"]
-  },
-  {
-    image: "/images/d2e5b4ee-c4df-4a83-a8dd-79ba14138b64.jpeg",
-    alt: "Buses confortables para eventos y convenciones",
-    title: "Eventos y Convenciones",
-    subtitle: "Viaje con comodidad y estilo",
-    description: "Transporte ideal para excursiones, congresos y eventos sociales.",
-    features: ["Aire Acondicionado", "Asientos Reclinables", "Experiencia Garantizada"]
-  },
-  {
-    image: "/images/d558da3c-69a4-4240-8d65-5d133d0f0985.jpeg",
-    alt: "Servicio de transporte privado de alta calidad",
-    title: "Servicio Ejecutivo",
-    subtitle: "Exclusividad y confort",
-    description: "Atención personalizada para traslados ejecutivos y VIP.",
-    features: ["Discreción", "Confort Premium", "Atención Personalizada"]
-  },
-  {
-    image: "/images/bus-gold-1.jpg",
-    alt: "Bus moderno con diseño dorado de Estrella de David",
-    title: "Confort Superior",
-    subtitle: "Viaje con estilo y elegancia",
-    description: "Nuestras unidades modernas garantizan una experiencia de viaje inigualable.",
-    features: ["Diseño Moderno", "Asientos Ergonómicos", "Climatización"]
-  },
-  {
-    image: "/images/bus-silver-1.jpg",
-    alt: "Bus interprovincial plateado y moderno",
-    title: "Viajes Seguros",
-    subtitle: "Su seguridad es nuestra prioridad",
-    description: "Flota equipada con la última tecnología en seguridad vial.",
-    features: ["Frenos ABS", "Control de Estabilidad", "Monitoreo 24/7"]
-  },
-  {
-    image: "/images/bus-silver-2.jpg",
-    alt: "Vista frontal de bus moderno de Estrella de David",
-    title: "Servicio Puntual",
-    subtitle: "Respetamos su tiempo",
-    description: "Garantizamos la puntualidad en todos nuestros servicios de transporte.",
-    features: ["Salidas Exactas", "Rutas Optimizadas", "Conductores Expertos"]
-  },
-]
+interface HeroSectionProps {
+  data: {
+    slides: {
+      _key: string
+      image: { asset: { url: string; metadata?: { lqip: string } } }
+      alt: string
+      title: string
+      subtitle: string
+      description: string
+      features: string[]
+    }[]
+  }
+}
 
-export function HeroSection() {
+export function HeroSection({ data }: HeroSectionProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
+  const slides = data?.slides || []
+
   const nextSlide = useCallback(() => {
+    if (slides.length === 0) return
     setCurrentSlide((prev) => (prev + 1) % slides.length)
-  }, [])
+  }, [slides.length])
 
   const prevSlide = useCallback(() => {
+    if (slides.length === 0) return
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-  }, [])
+  }, [slides.length])
 
   useEffect(() => {
-    if (!isAutoPlaying) return
+    if (!isAutoPlaying || slides.length === 0) return
     const timer = setInterval(nextSlide, 7000)
     return () => clearInterval(timer)
-  }, [isAutoPlaying, nextSlide])
+  }, [isAutoPlaying, nextSlide, slides.length])
+
+  if (slides.length === 0) {
+    return null // Or a loading state/fallback
+  }
 
   return (
     <section
@@ -102,27 +65,29 @@ export function HeroSection() {
       {/* Background Slides */}
       <AnimatePresence mode="popLayout">
         <motion.div
-          key={currentSlide}
+          key={slides[currentSlide]._key || currentSlide}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
           className="absolute inset-0 z-0"
         >
-          <Image
-            src={slides[currentSlide].image}
-            alt={slides[currentSlide].alt}
-            fill
-            className="object-cover"
-            priority
-          />
+          {slides[currentSlide].image?.asset?.url && (
+            <Image
+              src={slides[currentSlide].image.asset.url}
+              alt={slides[currentSlide].alt}
+              fill
+              className="object-cover"
+              priority
+              placeholder={slides[currentSlide].image.asset.metadata?.lqip ? "blur" : "empty"}
+              blurDataURL={slides[currentSlide].image.asset.metadata?.lqip}
+            />
+          )}
           {/* Enhanced Overlay - Darker gradient for text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
         </motion.div>
       </AnimatePresence>
-
-      {/* Decorative Yellow Shape removed as per user request */}
 
       <div className="relative z-20 container mx-auto px-4 h-full flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full">
@@ -131,7 +96,7 @@ export function HeroSection() {
           <div className="lg:col-span-8 flex flex-col justify-center text-white">
             <AnimatePresence mode="wait">
               <motion.div
-                key={currentSlide}
+                key={slides[currentSlide]._key || currentSlide}
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 50 }}
@@ -174,21 +139,23 @@ export function HeroSection() {
                 </motion.p>
 
                 {/* Features Grid */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 max-w-2xl"
-                >
-                  {slides[currentSlide].features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-sm text-gray-200">
-                      {idx === 0 && <Shield className="w-5 h-5 text-[#FFD700]" />}
-                      {idx === 1 && <Clock className="w-5 h-5 text-[#FFD700]" />}
-                      {idx === 2 && <Award className="w-5 h-5 text-[#FFD700]" />}
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </motion.div>
+                {slides[currentSlide].features && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                    className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 max-w-2xl"
+                  >
+                    {slides[currentSlide].features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-200">
+                        {idx === 0 && <Shield className="w-5 h-5 text-[#FFD700]" />}
+                        {idx === 1 && <Clock className="w-5 h-5 text-[#FFD700]" />}
+                        {idx === 2 && <Award className="w-5 h-5 text-[#FFD700]" />}
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}

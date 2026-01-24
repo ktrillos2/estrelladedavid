@@ -20,5 +20,12 @@ export const settings = defineType({
                 defineField({ name: 'description', title: 'Descripción Base', type: 'text' })
             ]
         })
-    ]
+    ],
+    preview: {
+        prepare() {
+            return {
+                title: 'Ajustes Generales'
+            }
+        }
+    }
 })

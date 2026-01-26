@@ -19,12 +19,36 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+
+    try {
+      const formData = new FormData(e.currentTarget)
+      const data = {
+        nombre: formData.get('nombre'),
+        email: formData.get('email'),
+        telefono: formData.get('telefono'),
+        servicio: formData.get('servicio'),
+        mensaje: formData.get('mensaje'),
+      }
+
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
+
+      setIsSubmitted(true)
+    } catch (error) {
+      console.error('Error sending message:', error)
+      alert("Hubo un error al enviar el mensaje. Por favor, inténtelo de nuevo.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
@@ -42,7 +66,7 @@ export function ContactForm() {
         >
           <HiOutlineCheckCircle className="h-12 w-12 text-green-600" />
         </motion.div>
-        <motion.h3 
+        <motion.h3
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
@@ -50,7 +74,7 @@ export function ContactForm() {
         >
           Mensaje Enviado
         </motion.h3>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
@@ -79,14 +103,14 @@ export function ContactForm() {
   }
 
   return (
-    <motion.form 
-      onSubmit={handleSubmit} 
+    <motion.form
+      onSubmit={handleSubmit}
       className="space-y-6 bg-muted/30 rounded-2xl p-8 border border-border/50"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <motion.div 
+        <motion.div
           className="space-y-2"
           animate={{ scale: focusedField === 'nombre' ? 1.02 : 1 }}
           transition={{ duration: 0.2 }}
@@ -104,7 +128,7 @@ export function ContactForm() {
             onBlur={() => setFocusedField(null)}
           />
         </motion.div>
-        <motion.div 
+        <motion.div
           className="space-y-2"
           animate={{ scale: focusedField === 'email' ? 1.02 : 1 }}
           transition={{ duration: 0.2 }}
@@ -125,7 +149,7 @@ export function ContactForm() {
         </motion.div>
       </div>
 
-      <motion.div 
+      <motion.div
         className="space-y-2"
         animate={{ scale: focusedField === 'telefono' ? 1.02 : 1 }}
         transition={{ duration: 0.2 }}
@@ -144,7 +168,7 @@ export function ContactForm() {
         />
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="space-y-2"
         animate={{ scale: focusedField === 'servicio' ? 1.02 : 1 }}
         transition={{ duration: 0.2 }}
@@ -167,7 +191,7 @@ export function ContactForm() {
         </select>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="space-y-2"
         animate={{ scale: focusedField === 'mensaje' ? 1.02 : 1 }}
         transition={{ duration: 0.2 }}

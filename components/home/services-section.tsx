@@ -32,14 +32,44 @@ interface ServicesSectionProps {
 export function ServicesSection({ data }: ServicesSectionProps) {
   if (!data) return null
 
-  const { subtitle, title, description, servicesList } = data
+  const {
+    subtitle = "Nuestros Servicios",
+    title = "Soluciones de Transporte Integral",
+    description = "Adaptamos nuestros servicios a las necesidades específicas de su empresa o evento.",
+    servicesList = [
+      {
+        title: "Transporte de Personal",
+        description: "Traslado seguro y puntual de colaboradores a sus centros de trabajo.",
+        icon: "users",
+        link: "/servicios/transporte-de-personal"
+      },
+      {
+        title: "Eventos y Convenciones",
+        description: "Logística de transporte para eventos corporativos, congresos y reuniones.",
+        icon: "calendar",
+        link: "/servicios/eventos-y-convenciones"
+      },
+      {
+        title: "Turismo Corporativo",
+        description: "Excursiones y traslados turísticos para grupos empresariales.",
+        icon: "briefcase",
+        link: "/servicios/turismo"
+      },
+      {
+        title: "Carga Liviana",
+        description: "Transporte seguro de paquetería y carga ligera.",
+        icon: "truck",
+        link: "/servicios/carga"
+      }
+    ]
+  } = data || {}
 
   return (
-    <section id="servicios" className="py-24 bg-muted/30 relative overflow-hidden">
+    <section id="servicios" className="py-24 bg-muted/30 relative overflow-hidden " >
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-[120px] relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

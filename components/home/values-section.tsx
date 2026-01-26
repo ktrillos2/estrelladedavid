@@ -26,11 +26,35 @@ interface ValuesSectionProps {
 export function ValuesSection({ data }: ValuesSectionProps) {
     if (!data) return null
 
-    const { subtitle, title, description, valuesList } = data
+    const {
+        subtitle = "Nuestros valores",
+        title = "Pilares de Nuestra Excelencia",
+        description = "Los principios que guían cada uno de nuestros servicios y garantizan la satisfacción de nuestros clientes.",
+        valuesList = [
+            {
+                title: "Seguridad",
+                description: "Nuestra prioridad absoluta. Unidades monitoreadas y conductores rigurosamente seleccionados.",
+                color: "#ff9100", // Orange
+                icon: "shield"
+            },
+            {
+                title: "Puntualidad",
+                description: "Respetamos su tiempo. Cumplimiento estricto de itinerarios y horarios programados.",
+                color: "#ffd700", // Gold
+                icon: "clock"
+            },
+            {
+                title: "Calidad",
+                description: "Servicio de primer nivel. Atención amable, unidades limpias y confortables.",
+                color: "#ffbd00", // Amber
+                icon: "sparkles"
+            }
+        ]
+    } = data || {}
 
     return (
-        <section className="py-24 bg-background relative overflow-hidden">
-            <div className="container mx-auto px-4 relative z-10">
+        <section className="py-24 bg-background  relative overflow-hidden" >
+            <div className="container mx-auto  relative z-10" style={{ paddingLeft: '120px', paddingRight: '120px' }}>
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}

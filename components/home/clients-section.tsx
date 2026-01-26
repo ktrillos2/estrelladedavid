@@ -23,9 +23,18 @@ interface ClientsSectionProps {
 }
 
 export function ClientsSection({ data, showHeader = true }: ClientsSectionProps) {
-  if (!data) return null
-
-  const { subtitle, title, description, clientsList } = data
+  const {
+    subtitle = "Confían en Nosotros",
+    title = "Nuestros Clientes",
+    description = "Empresas líderes que confían en nuestra excelencia y compromiso.",
+    clientsList = [
+      { name: "Ferreyros", logo: { asset: { url: "/images/clients/ferreyros-logo.png" } } },
+      { name: "Yura", logo: { asset: { url: "/images/clients/yura-logo.png" } } },
+      { name: "Cat", logo: { asset: { url: "/images/clients/cat-logo.png" } } },
+      { name: "FLSmidth", logo: { asset: { url: "/images/clients/flsmidth-logo.png" } } },
+      { name: "Weir", logo: { asset: { url: "/images/clients/weir-logo.png" } } },
+    ]
+  } = data || {}
 
   return (
     <section className="py-24 bg-secondary text-secondary-foreground relative overflow-hidden">
@@ -37,7 +46,7 @@ export function ClientsSection({ data, showHeader = true }: ClientsSectionProps)
         }} />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-8 md:px-16 lg:px-32 relative z-10">
         {showHeader && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}

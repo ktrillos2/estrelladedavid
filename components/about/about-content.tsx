@@ -89,17 +89,45 @@ export function AboutContent({ data }: AboutContentProps) {
     const missionInView = useInView(missionRef, { once: true, margin: "-100px" })
 
     const {
-        title,
-        description,
-        mission,
-        vision,
-        valuesTitle,
-        valuesDescription,
-        timelineTitle,
-        timelineItems,
-        statsTitle,
-        stats,
-        whyChooseUs
+        title = "Quiénes Somos",
+        description = "Somos una empresa dedicada al transporte de personal y del sector público, con más de 17 años de experiencia brindando servicios de calidad en Arequipa.",
+        mission = {
+            title: "Compromiso con la Calidad",
+            description: "Estrella de David S.R.L. es una empresa dedicada al transporte de personal, comprometida en brindar un servicio integral, con altos estándares de calidad, seguridad y puntualidad. Buscamos satisfacer las necesidades de movilidad de nuestros clientes, contribuyendo al desarrollo de las empresas y la comunidad arequipeña."
+        },
+        vision = {
+            title: "Liderazgo Regional",
+            description: "Aspiramos ser reconocidos como una empresa privada rentable, líder en el transporte de personal en la región sur del Perú, destacándonos por la excelencia en el servicio, la innovación constante y el compromiso con la seguridad y bienestar de nuestros pasajeros y colaboradores."
+        },
+        valuesTitle = "Lo que nos Define",
+        valuesDescription = "Los valores que nos guían y definen nuestro compromiso diario con cada cliente.",
+        timelineTitle = "Trayectoria",
+        timelineItems = [
+            { year: "2007", title: "Fundación", description: "Inicio de operaciones en Arequipa con 5 vehículos" },
+            { year: "2012", title: "Expansión", description: "Ampliación de flota a 20 unidades y nuevos clientes corporativos" },
+            { year: "2017", title: "Consolidación", description: "Reconocidos como empresa líder en transporte de personal" },
+            { year: "2024", title: "Actualidad", description: "Más de 50 vehículos modernos y presencia regional" },
+        ],
+        statsTitle = "Nuestra Experiencia en Números",
+        stats = [
+            { value: "17+", label: "Años de experiencia", icon: "clock" },
+            { value: "50+", label: "Vehículos en flota", icon: "truck" },
+            { value: "100+", label: "Clientes satisfechos", icon: "users" },
+            { value: "24/7", label: "Disponibilidad", icon: "globe" },
+        ],
+        whyChooseUs = {
+            badge: "Por qué Elegirnos",
+            title: "Confía en los Expertos",
+            description: "Con más de 17 años de experiencia, hemos desarrollado procesos y estándares que garantizan un servicio de primera calidad.",
+            benefits: [
+                "Conductores profesionales y certificados",
+                "Flota moderna con mantenimiento constante",
+                "Cobertura en toda la región sur del Perú",
+                "Atención personalizada las 24 horas",
+                "Precios competitivos y transparentes",
+            ],
+            image: { asset: { url: "/images/buses-colonial.jpg" } }
+        }
     } = data || {}
 
     return (
@@ -117,7 +145,7 @@ export function AboutContent({ data }: AboutContentProps) {
                     <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/85 to-secondary/70" />
                 </div>
 
-                <div className="relative z-10 container mx-auto px-4 py-32">
+                <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-24 py-32">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -153,7 +181,7 @@ export function AboutContent({ data }: AboutContentProps) {
             <section ref={missionRef} className="py-24 bg-background relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
                     <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -200,7 +228,7 @@ export function AboutContent({ data }: AboutContentProps) {
 
             {/* Values Section */}
             <section className="py-24 bg-muted/50 relative overflow-hidden">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-6 md:px-12 lg:px-24">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -250,7 +278,7 @@ export function AboutContent({ data }: AboutContentProps) {
 
             {/* Timeline Section */}
             <section className="py-24 bg-background">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-6 md:px-12 lg:px-24">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -313,7 +341,7 @@ export function AboutContent({ data }: AboutContentProps) {
                     }} />
                 </div>
 
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -354,7 +382,7 @@ export function AboutContent({ data }: AboutContentProps) {
 
             {/* Why Choose Us Section */}
             <section className="py-24 bg-background">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-6 md:px-12 lg:px-24">
                     <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}

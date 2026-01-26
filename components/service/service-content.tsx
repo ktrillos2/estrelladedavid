@@ -102,7 +102,7 @@ export function ServiceContent({ data }: ServiceContentProps) {
                     className="absolute top-20 right-[10%] w-64 h-64 bg-primary/20 rounded-full blur-3xl opacity-50"
                 />
 
-                <div className="relative z-10 container mx-auto px-4 py-32">
+                <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-24 py-32">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -146,7 +146,7 @@ export function ServiceContent({ data }: ServiceContentProps) {
 
             {/* Intro Section */}
             <section className="py-24 bg-background">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-6 md:px-12 lg:px-24">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -202,7 +202,7 @@ export function ServiceContent({ data }: ServiceContentProps) {
 
             {/* Content Section (Image + Text) */}
             <section className="py-24 bg-muted/30">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-6 md:px-12 lg:px-24">
                     <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -267,7 +267,7 @@ export function ServiceContent({ data }: ServiceContentProps) {
                         }} />
                     </div>
 
-                    <div className="container mx-auto px-4 relative z-10">
+                    <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -336,7 +336,7 @@ export function ServiceContent({ data }: ServiceContentProps) {
                     }} />
                 </div>
 
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}

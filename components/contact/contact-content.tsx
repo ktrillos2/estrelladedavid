@@ -64,7 +64,7 @@ export function ContactContent({ data }: ContactContentProps) {
                     className="absolute top-20 right-[10%] w-64 h-64 bg-primary/10 rounded-full blur-3xl"
                 />
 
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -93,7 +93,7 @@ export function ContactContent({ data }: ContactContentProps) {
             <section className="py-24 bg-background relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2" />
 
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
                     <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
                         {/* Contact Form */}
                         <motion.div
@@ -183,7 +183,7 @@ export function ContactContent({ data }: ContactContentProps) {
 
             {/* Map Section */}
             <section className="py-24 bg-muted/50">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-6 md:px-12 lg:px-24">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

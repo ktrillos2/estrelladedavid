@@ -25,22 +25,22 @@ export function AboutSection({ data }: AboutSectionProps) {
   if (!data) return null
 
   const {
-    image,
-    experienceCount,
-    experienceText,
-    backgroundText,
-    subtitle,
-    title,
-    mainText,
-    secondaryText,
-    features,
-    ctaText,
-    ctaLink
-  } = data
+    image = { asset: { url: "/images/team-airport.jpg" } },
+    experienceCount = "17+",
+    experienceText = "Años de Experiencia",
+    backgroundText = "Líderes",
+    subtitle = "Quiénes Somos",
+    title = "Expertos en Transporte de Personal",
+    mainText = "Brindamos soluciones integrales de transporte con los más altos estándares de seguridad y calidad.",
+    secondaryText = "Nuestro compromiso es garantizar que su personal llegue a tiempo y seguro a su destino, contribuyendo a la productividad de su empresa.",
+    features = ["Unidades Modernas", "Monitoreo en Tiempo Real", "Conductores Capacitados"],
+    ctaText = "Conozca Más",
+    ctaLink = "/nosotros"
+  } = data || {}
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10" style={{ paddingLeft: '120px', paddingRight: '120px' }}>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Side with Yellow Frame */}
           <motion.div

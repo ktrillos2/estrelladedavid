@@ -38,7 +38,7 @@ export function Header({ data }: { data: any }) {
     <>
       {/* Top Bar */}
       <div className="hidden md:block bg-secondary text-secondary-foreground py-2">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-6">
               {topBar?.phone && (
@@ -79,7 +79,7 @@ export function Header({ data }: { data: any }) {
           : "bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60"
           }`}
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center group">

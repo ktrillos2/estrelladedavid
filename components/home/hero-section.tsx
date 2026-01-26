@@ -34,7 +34,35 @@ export function HeroSection({ data }: HeroSectionProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
-  const slides = data?.slides || []
+  const slides = data?.slides?.length > 0 ? data.slides : [
+    {
+      _key: "1",
+      image: { asset: { url: "/images/bus-gold-1.jpg" } },
+      alt: "Transporte de Personal",
+      title: "Transporte Corporativo de Alta Gama",
+      subtitle: "Excelencia en Movimiento",
+      description: "Soluciones de transporte seguro, puntual y confortable para su personal. Flota moderna y conductores certificados.",
+      features: ["Seguridad Certificada", "Monitoreo GPS 24/7", "Conductores Profesionales"]
+    },
+    {
+      _key: "2",
+      image: { asset: { url: "/images/vans-fleet.jpg" } },
+      alt: "Flota de Vans",
+      title: "Servicio Turístico y Privado",
+      subtitle: "Descubra el Perú",
+      description: "Viaje con comodidad y estilo a los mejores destinos turísticos del sur del Perú. Unidades equipadas para su confort.",
+      features: ["Aire Acondicionado", "Asientos Reclinables", "Atención Personalizada"]
+    },
+    {
+      _key: "3",
+      image: { asset: { url: "/images/team-airport.jpg" } },
+      alt: "Equipo Profesional",
+      title: "Compromiso y Dedicación",
+      subtitle: "Más que un Transporte",
+      description: "Un equipo humano comprometido con su seguridad y bienestar en cada kilómetro del recorrido.",
+      features: ["Atención 24 Horas", "Soporte en Ruta", "Experiencia Comprobada"]
+    }
+  ]
 
   const nextSlide = useCallback(() => {
     if (slides.length === 0) return
@@ -89,7 +117,7 @@ export function HeroSection({ data }: HeroSectionProps) {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-20 container mx-auto px-4 h-full flex items-center">
+      <div className="relative z-20 container mx-auto px-8 md:px-16 lg:px-32 h-full flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full">
 
           {/* Text Content */}

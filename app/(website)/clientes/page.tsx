@@ -17,7 +17,7 @@ export default async function ClientesPage() {
           }} />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10 text-center">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10 text-center">
           {/* We animate manually here since this is server component + motion inside client components usually, 
               but for text we can just render it. If motion is needed, we should extract a component. 
               For now keeping simple text rendering to match server component pattern or wrap in MotionDiv if needed. 

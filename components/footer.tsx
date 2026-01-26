@@ -30,16 +30,7 @@ export function Footer({ data }: { data: any }) {
   const {
     logo,
     description,
-    socialLinks = [
-      { platform: "facebook", url: "https://www.facebook.com/EstrellaDeDavidAQP" },
-      { platform: "instagram", url: "https://www.instagram.com/setrans_estrella_de_david/" },
-      // Keeping LinkedIn and WhatsApp if desired, or just the ones requested. User said "son los unicos que habran" (they are the only ones). 
-      // However, WhatsApp is usually critical. I will keep WhatsApp as well since it's in the original code, but remove LinkedIn if not provided.
-      // Actually, user said "son los unicos que habran" (Instagram and Facebook). But the previous code had WhatsApp in a separate list or integrated?
-      // The previous code had a hardcoded `socialLinks` constant array at the top (lines 9-14) which was NOT used in the render!
-      // The render uses `data.socialLinks`.
-      // I will override `data.socialLinks` defaults.
-    ],
+    socialLinks,
     contactInfo
   } = data || {}
 

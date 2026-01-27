@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { HiOutlinePhone, HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi"
-import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa"
+import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaHeart } from "react-icons/fa"
 
 const socialLinks = [
   { icon: FaFacebookF, href: "#", label: "Facebook" },
@@ -229,12 +229,15 @@ export function Footer({ data }: { data: any }) {
             © {new Date().getFullYear()} Estrella de David S.R.L. Todos los derechos reservados.
           </p>
           <div className="flex gap-6 text-sm text-secondary-foreground/50">
-            <Link href="#" className="hover:text-primary transition-colors">
-              Política de Privacidad
-            </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
-              Términos y Condiciones
-            </Link>
+            <a
+              href="https://www.kytcode.lat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer group"
+            >
+              <span>Desarrollado por K&T</span>
+              <FaHeart className="text-white w-4 h-4 group-hover:scale-110 transition-transform" />
+            </a>
           </div>
         </motion.div>
       </div>

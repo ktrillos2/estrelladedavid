@@ -69,7 +69,7 @@ export function ServicesSection({ data }: ServicesSectionProps) {
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
 
-      <div className="container mx-auto px-[120px] relative z-10">
+      <div className="container mx-auto  relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

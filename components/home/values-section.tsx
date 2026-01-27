@@ -54,7 +54,7 @@ export function ValuesSection({ data }: ValuesSectionProps) {
 
     return (
         <section className="py-24 bg-background  relative overflow-hidden" >
-            <div className="container mx-auto  relative z-10" style={{ paddingLeft: '120px', paddingRight: '120px' }}>
+            <div className="container mx-auto  relative z-10 px-4 lg:px-[120px]">
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}

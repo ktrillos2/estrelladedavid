@@ -40,7 +40,7 @@ export function AboutSection({ data }: AboutSectionProps) {
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
-      <div className="container mx-auto relative z-10" style={{ paddingLeft: '120px', paddingRight: '120px' }}>
+      <div className="container mx-auto relative z-10 px-4 lg:px-[120px]">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Side with Yellow Frame */}
           <motion.div

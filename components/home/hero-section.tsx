@@ -76,7 +76,7 @@ export function HeroSection({ data }: HeroSectionProps) {
 
   useEffect(() => {
     if (!isAutoPlaying || slides.length === 0) return
-    const timer = setInterval(nextSlide, 7000)
+    const timer = setInterval(nextSlide, 5000)
     return () => clearInterval(timer)
   }, [isAutoPlaying, nextSlide, slides.length])
 

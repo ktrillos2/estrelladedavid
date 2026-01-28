@@ -117,7 +117,7 @@ export function HeroSection({ data }: HeroSectionProps) {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-20 container mx-auto px-8 md:px-16 lg:px-32 h-full flex items-center">
+      <div className="relative z-20 container mx-auto px-8 md:px-16 lg:pl-0 lg:pr-32 h-full flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full">
 
           {/* Text Content */}
